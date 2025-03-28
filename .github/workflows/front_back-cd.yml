@@ -28,13 +28,13 @@ jobs:
         name: Build and push Front
         uses: docker/build-push-action@v6
         with:
-          context: front
+          context: "{{defaultContext}}:front"
           push: true
           tags: user/bobapp-front:latest
       -
         name: Build and push Back
         uses: docker/build-push-action@v6
         with:
-          context: back
+          context: "{{defaultContext}}:back"
           push: true
           tags: user/bobapp-back:latest
