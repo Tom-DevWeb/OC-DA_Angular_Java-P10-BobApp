@@ -35,3 +35,33 @@ jobs:
       with:
         name: angular-build
         path: front/dist/
+
+  test:
+
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: 🛎️ Checkout du code
+        uses: actions/checkout@v4
+
+      - name: 📦 Installation de Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'npm'
+          cache-dependency-path: front/package-lock.json
+
+      - name: 📥 Installation des dépendances
+        run: npm ci
+        working-directory: front
+
+      - name: 🧪 Run tests et génère le coverage
+        run: npm run test --coverage --watch=false --browsers=ChromeHeadless
+
+      - name: 📂 Sauvegarde Coverage report
+        if: always()
+        uses: actions/upload-artifact@v2
+        with:
+          name: coverage-report
+          path: ./coverage/bobapp
