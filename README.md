@@ -1,10 +1,15 @@
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=BobApp-Back&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=BobApp-Back)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=BobApp-Front&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=BobApp-Front)
+
 # BobApp
+
+## Install
 
 Clone project:
 
 > git clone XXXXX
 
-## Front-end 
+### Front-end 
 
 Go inside folder the front folder:
 
@@ -18,7 +23,7 @@ Launch Front-end:
 
 > npm run start;
 
-### Docker
+#### Docker
 
 Build the container:
 
@@ -28,7 +33,7 @@ Start the container:
 
 > docker run -p 8080:8080 --name bobapp-front -d bobapp-front
 
-## Back-end
+### Back-end
 
 Go inside folder the back folder:
 
@@ -46,7 +51,7 @@ Launch the tests:
 
 > mvn clean install
 
-### Docker
+#### Docker
 
 Build the container:
 
@@ -54,4 +59,8 @@ Build the container:
 
 Start the container:
 
-> docker run -p 8080:8080 --name bobapp-back -d bobapp-back 
+> docker run -p 8080:8080 --name bobapp-back -d bobapp-back
+
+## SonarQube
+
+https://sonarcloud.io/organizations/tom-devweb/projects
