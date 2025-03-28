@@ -56,3 +56,15 @@ jobs:
     - name: 📦 Package
       run: mvn install -DskipTests=true
       working-directory: back
+
+    - name: 📂 Sauvegarde du package
+      uses: actions/upload-artifact@v4
+      with:
+        name: backend-artifact
+        path: back/target/*.jar
+
+    - name: 📂 Sauvegarde JaCoCo Test Coverage Report
+      uses: actions/upload-artifact@v4
+      with:
+        name: jacoco-report
+        path: back/target/site/jacoco/index.html
