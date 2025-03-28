@@ -58,10 +58,11 @@ jobs:
 
       - name: 🧪 Run tests et génère le coverage
         run: npm run test --coverage --watch=false --browsers=ChromeHeadless
+        working-directory: front
 
       - name: 📂 Sauvegarde Coverage report
         if: always()
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: coverage-report
           path: ./coverage/bobapp
