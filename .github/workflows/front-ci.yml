@@ -15,21 +15,29 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Use Node.js $
+    - name: 🛎️ Checkout du code
+      uses: actions/checkout@v4
+    
+    - name: 📦 Installation de Node.js
       uses: actions/setup-node@v4
       with:
         node-version: 18
         cache: 'npm'
         cache-dependency-path: front/package-lock.json
-    - run: npm ci
+      
+    - name: 📥 Installation des dépendances
+      run: npm ci
       working-directory: front
-    - run: npm run build --if-present
+      
+    - name: 🏗️ Build de l'application
+      run: npm run build --if-present
       working-directory: front
-    - run: npm test
+      
+    - name: 🧪 Exécution des tests unitaires (Headless Chrome)
+      run: npm run test -- --watch=false --browsers=ChromeHeadless
       working-directory: front
 
-    - name: Sauvegarde du build
+    - name: 📂 Sauvegarde du build
       uses: actions/upload-artifact@v4
       with:
         name: angular-build
