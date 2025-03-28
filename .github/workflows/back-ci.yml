@@ -21,9 +21,11 @@ jobs:
 
     - name: 📦 Compile
       run: mvn compile
+      working-directory: back
 
   test:
     runs-on: ubuntu-latest
+    needs: compile
 
     steps:
     - name: ⬇️ Checkout repository
@@ -36,9 +38,11 @@ jobs:
 
     - name: 🧪 Test
       run: mvn test
+      working-directory: back
 
   package:
     runs-on: ubuntu-latest
+    needs: test
 
     steps:
     - name: ⬇️ Checkout repository
@@ -51,3 +55,4 @@ jobs:
 
     - name: 📦 Package
       run: mvn install -DskipTests=true
+      working-directory: back
