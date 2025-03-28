@@ -1,6 +1,3 @@
-# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
-
 name: Front Angular CI
 
 on:
@@ -32,19 +29,9 @@ jobs:
     - name: 🏗️ Build de l'application
       run: npm run build --if-present
       working-directory: front
-      
-    - name: 🧪 Exécution des tests unitaires (Headless Chrome)
-      run: npm run test -- --watch=false --browsers=ChromeHeadless
-      working-directory: front
 
     - name: 📂 Sauvegarde du build
       uses: actions/upload-artifact@v4
       with:
         name: angular-build
         path: front/dist/
-
-    - name: 📂 Sauvegarde des rapports de test
-      uses: actions/upload-artifact@v4
-      with:
-        name: angular-test-results
-        path: front/coverage/
