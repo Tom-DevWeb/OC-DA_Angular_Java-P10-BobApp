@@ -58,6 +58,7 @@ jobs:
 
       - name: 🧪 Run tests et génère le coverage
         run: npm run test --coverage --watch=false --browsers=ChromeHeadless
+        working-directory: front
 
       - name: 📂 Sauvegarde Coverage report
         if: always()
