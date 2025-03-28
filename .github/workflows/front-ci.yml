@@ -42,3 +42,9 @@ jobs:
       with:
         name: angular-build
         path: front/dist/
+
+    - name: 📂 Sauvegarde des rapports de test
+      uses: actions/upload-artifact@v4
+      with:
+        name: angular-test-results
+        path: front/coverage/
