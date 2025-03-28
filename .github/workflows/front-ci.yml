@@ -66,3 +66,15 @@ jobs:
         with:
           name: coverage-report
           path: front/coverage/bobapp
+
+    sonarqube :
+      nom :  SonarQube
+      runs-on :  ubuntu-latest
+      steps :
+        - uses :  actions/checkout@v4
+          with :
+            fetch-depth :  0   # Les clones superficiels doivent être désactivés pour une meilleure pertinence de l'analyse
+        - nom :  SonarQube  Scan
+          uses :  SonarSource/sonarqube-scan-action@v5
+          env :
+            SONAR_TOKEN :  ${{  secrets.SONAR_TOKEN  }}
