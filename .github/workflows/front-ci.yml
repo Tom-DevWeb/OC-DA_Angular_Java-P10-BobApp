@@ -57,7 +57,7 @@ jobs:
         working-directory: front
 
       - name: 🧪 Run tests et génère le coverage
-        run: npm run test -- --no-watch --no-progress --browsers=ChromeHeadless --code-coverage
+        run: npm run test -- --watch=false --browsers=ChromeHeadless
         working-directory: front
 
       - name: 📂 Sauvegarde Coverage report
@@ -81,7 +81,3 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           projectBaseDir: front
-          args: >
-            -Dsonar.sources=src/app
-            -Dsonar.exclusions=src/**/*.spec.ts
-            -Dsonar.javascript.lcov.reportPaths=coverage/bobapp/lcov.info
