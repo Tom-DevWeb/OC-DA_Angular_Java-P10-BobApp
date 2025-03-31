@@ -12,20 +12,18 @@ jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
-      - name: 🔍 Liste des artifacts disponibles avant téléchargement
-        run: gh run list --repo ${{ github.repository }}
-      -
-        name: 🛠️ Récupérer l'Artifact du Front
-        uses: actions/download-artifact@v4
-        with:
-          name: front-artifact
-          path: front-build
       -
         name: 🛠️ Récupérer l'Artifact du Back
         uses: actions/download-artifact@v4
         with:
           name: backend-artifact
           path: back-build
+      -
+        name: 🛠️ Récupérer l'Artifact du Front
+        uses: actions/download-artifact@v4
+        with:
+          name: front-artifact
+          path: front-build
       -
         name: 🔐 Login to Docker Hub
         uses: docker/login-action@v3
