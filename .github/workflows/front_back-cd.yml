@@ -12,6 +12,8 @@ jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
+      - name: 🔍 Liste des artifacts disponibles
+        run: ls -R ${{ runner.temp }}/_github_home
       -
         name: 🛠️ Récupérer l'Artifact du Front
         uses: actions/download-artifact@v4
