@@ -71,7 +71,6 @@ jobs:
             -Dsonar.sources=src/app
             -Dsonar.exclusions=src/**/*.spec.ts
             -Dsonar.javascript.lcov.reportPaths=coverage/bobapp/lcov.info
-          # Ce paramètre doit être transmis pour l'analyse PR
             -Dsonar.pullrequest.branch=${{ github.head_ref }}
             -Dsonar.pullrequest.base=${{ github.base_ref }}
             -Dsonar.pullrequest.key=${{ github.event.pull_request.number }}
