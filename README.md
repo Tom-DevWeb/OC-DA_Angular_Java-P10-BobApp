@@ -8,12 +8,14 @@
 _https://sonarcloud.io/organizations/tom-devweb/projects_
 
 ### Front
+
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=BobApp-Front&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=BobApp-Front)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=BobApp-Front&metric=bugs)](https://sonarcloud.io/summary/new_code?id=BobApp-Front)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=BobApp-Front&metric=bugs)](https://sonarcloud.io/summary/new_code?id=BobApp-Front)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=BobApp-Front&metric=coverage)](https://sonarcloud.io/summary/new_code?id=BobApp-Front)
 [![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=BobApp-Front&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=BobApp-Front)
 ### Back
+
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=BobApp-Back&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=BobApp-Back)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=BobApp-Back&metric=bugs)](https://sonarcloud.io/summary/new_code?id=BobApp-Back)
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=BobApp-Back&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=BobApp-Back)
